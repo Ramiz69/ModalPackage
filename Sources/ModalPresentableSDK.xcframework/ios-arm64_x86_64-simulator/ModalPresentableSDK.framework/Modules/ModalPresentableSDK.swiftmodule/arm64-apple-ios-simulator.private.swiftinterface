@@ -176,16 +176,6 @@ extension ModalPresentableSDK.ModalPresentable where Self : UIKit.UIViewControll
   public func modalSetNeedsLayoutUpdate()
   public func modalPerformUpdates(_ updates: () -> Swift.Void)
   public func modalAnimate(_ animationBlock: @escaping () -> Swift.Void, _ completion: ModalPresentableSDK.AnimationCompletionType? = nil)
-  public var presentedVC: ModalPresentableSDK.ModalPresentationController? {
-    get
-  }
-  public var shortFormYPos: CoreFoundation.CGFloat {
-    get
-  }
-  public var longFormYPos: CoreFoundation.CGFloat {
-    get
-  }
-  public func topMargin(from: ModalPresentableSDK.ModalHeight) -> CoreFoundation.CGFloat
 }
 public protocol ModalPresenterProtocol {
   var isModalPresented: Swift.Bool { get }
@@ -222,6 +212,10 @@ public protocol ModalPresentable : AnyObject {
   func willTransition(to state: ModalPresentableSDK.PresentationState)
   func modalWillDismiss()
   func modalDidDismiss()
+  func modalTransition(to state: ModalPresentableSDK.PresentationState)
+  func modalSetNeedsLayoutUpdate()
+  func modalPerformUpdates(_ updates: () -> Swift.Void)
+  func modalAnimate(_ animationBlock: @escaping () -> Swift.Void, _ completion: ModalPresentableSDK.AnimationCompletionType?)
 }
 extension ModalPresentableSDK.PresentationState : Swift.Equatable {}
 extension ModalPresentableSDK.PresentationState : Swift.Hashable {}

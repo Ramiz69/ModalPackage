@@ -4095,6 +4095,171 @@
             "funcSelfKind": "NonMutating"
           },
           {
+            "kind": "Function",
+            "name": "modalTransition",
+            "printedName": "modalTransition(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "PresentationState",
+                "printedName": "ModalPresentableSDK.PresentationState",
+                "usr": "s:19ModalPresentableSDK17PresentationStateO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19ModalPresentableSDK0aB0P15modalTransition2toyAA17PresentationStateO_tF",
+            "mangledName": "$s19ModalPresentableSDK0aB0P15modalTransition2toyAA17PresentationStateO_tF",
+            "moduleName": "ModalPresentableSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ModalPresentableSDK.ModalPresentable>",
+            "sugared_genericSig": "<Self where Self : ModalPresentableSDK.ModalPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "modalSetNeedsLayoutUpdate",
+            "printedName": "modalSetNeedsLayoutUpdate()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19ModalPresentableSDK0aB0P25modalSetNeedsLayoutUpdateyyF",
+            "mangledName": "$s19ModalPresentableSDK0aB0P25modalSetNeedsLayoutUpdateyyF",
+            "moduleName": "ModalPresentableSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ModalPresentableSDK.ModalPresentable>",
+            "sugared_genericSig": "<Self where Self : ModalPresentableSDK.ModalPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "modalPerformUpdates",
+            "printedName": "modalPerformUpdates(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "typeAttributes": [
+                  "noescape"
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19ModalPresentableSDK0aB0P19modalPerformUpdatesyyyyXEF",
+            "mangledName": "$s19ModalPresentableSDK0aB0P19modalPerformUpdatesyyyyXEF",
+            "moduleName": "ModalPresentableSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ModalPresentableSDK.ModalPresentable>",
+            "sugared_genericSig": "<Self where Self : ModalPresentableSDK.ModalPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "modalAnimate",
+            "printedName": "modalAnimate(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "() -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.Bool) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:19ModalPresentableSDK0aB0P12modalAnimateyyyyc_ySbcSgtF",
+            "mangledName": "$s19ModalPresentableSDK0aB0P12modalAnimateyyyyc_ySbcSgtF",
+            "moduleName": "ModalPresentableSDK",
+            "genericSig": "<τ_0_0 where τ_0_0 : ModalPresentableSDK.ModalPresentable>",
+            "sugared_genericSig": "<Self where Self : ModalPresentableSDK.ModalPresentable>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
             "kind": "Var",
             "name": "topOffset",
             "printedName": "topOffset",
@@ -5425,184 +5590,6 @@
             "declKind": "Func",
             "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12modalAnimateyyyyc_ySbcSgtF",
             "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12modalAnimateyyyyc_ySbcSgtF",
-            "moduleName": "ModalPresentableSDK",
-            "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : ModalPresentableSDK.ModalPresentable>",
-            "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : ModalPresentableSDK.ModalPresentable>",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "presentedVC",
-            "printedName": "presentedVC",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "ModalPresentableSDK.ModalPresentationController?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "ModalPresentationController",
-                    "printedName": "ModalPresentableSDK.ModalPresentationController",
-                    "usr": "c:@M@ModalPresentableSDK@objc(cs)ModalPresentationController"
-                  }
-                ],
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE11presentedVCAA0a12PresentationE0CSgvp",
-            "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE11presentedVCAA0a12PresentationE0CSgvp",
-            "moduleName": "ModalPresentableSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "ModalPresentableSDK.ModalPresentationController?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "ModalPresentationController",
-                        "printedName": "ModalPresentableSDK.ModalPresentationController",
-                        "usr": "c:@M@ModalPresentableSDK@objc(cs)ModalPresentationController"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE11presentedVCAA0a12PresentationE0CSgvg",
-                "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE11presentedVCAA0a12PresentationE0CSgvg",
-                "moduleName": "ModalPresentableSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : ModalPresentableSDK.ModalPresentable>",
-                "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : ModalPresentableSDK.ModalPresentable>",
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "shortFormYPos",
-            "printedName": "shortFormYPos",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE13shortFormYPos14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE13shortFormYPos12CoreGraphics7CGFloatVvp",
-            "moduleName": "ModalPresentableSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE13shortFormYPos14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE13shortFormYPos12CoreGraphics7CGFloatVvg",
-                "moduleName": "ModalPresentableSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : ModalPresentableSDK.ModalPresentable>",
-                "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : ModalPresentableSDK.ModalPresentable>",
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "longFormYPos",
-            "printedName": "longFormYPos",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12longFormYPos14CoreFoundation7CGFloatVvp",
-            "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12longFormYPos12CoreGraphics7CGFloatVvp",
-            "moduleName": "ModalPresentableSDK",
-            "declAttributes": [
-              "AccessControl"
-            ],
-            "isFromExtension": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "CGFloat",
-                    "printedName": "CoreGraphics.CGFloat",
-                    "usr": "s:14CoreFoundation7CGFloatV"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12longFormYPos14CoreFoundation7CGFloatVvg",
-                "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE12longFormYPos12CoreGraphics7CGFloatVvg",
-                "moduleName": "ModalPresentableSDK",
-                "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : ModalPresentableSDK.ModalPresentable>",
-                "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : ModalPresentableSDK.ModalPresentable>",
-                "isFromExtension": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "topMargin",
-            "printedName": "topMargin(from:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "CGFloat",
-                "printedName": "CoreGraphics.CGFloat",
-                "usr": "s:14CoreFoundation7CGFloatV"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "ModalHeight",
-                "printedName": "ModalPresentableSDK.ModalHeight",
-                "usr": "s:19ModalPresentableSDK0A6HeightO"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE9topMargin4from14CoreFoundation7CGFloatVAA0A6HeightO_tF",
-            "mangledName": "$s19ModalPresentableSDK0aB0PAASo16UIViewControllerCRbzrlE9topMargin4from12CoreGraphics7CGFloatVAA0A6HeightO_tF",
             "moduleName": "ModalPresentableSDK",
             "genericSig": "<τ_0_0 where τ_0_0 : UIKit.UIViewController, τ_0_0 : ModalPresentableSDK.ModalPresentable>",
             "sugared_genericSig": "<Self where Self : UIKit.UIViewController, Self : ModalPresentableSDK.ModalPresentable>",
