@@ -1,0 +1,172 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios13.1-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name ModalPresentableSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import ModalPresentableSDK
+import Swift
+import UIKit
+import _Concurrency
+import _StringProcessing
+public enum ModalHeight : Swift.Equatable {
+  case maxHeight
+  case maxHeightWithTopInset(CoreFoundation.CGFloat)
+  case contentHeight(CoreFoundation.CGFloat)
+  case contentHeightIgnoringSafeArea(CoreFoundation.CGFloat)
+  case intrinsicHeight
+  public static func == (a: ModalPresentableSDK.ModalHeight, b: ModalPresentableSDK.ModalHeight) -> Swift.Bool
+}
+public typealias AnimationCompletionType = (Swift.Bool) -> Swift.Void
+public typealias LayoutType = UIKit.UIViewController & ModalPresentableSDK.ModalPresentable
+public enum PresentationState {
+  case shortForm, longForm
+  public static func == (a: ModalPresentableSDK.PresentationState, b: ModalPresentableSDK.PresentationState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIScrollView {
+  @_Concurrency.MainActor(unsafe) public var isScrolling: Swift.Bool {
+    get
+  }
+}
+public enum TransitionStyle {
+  case presentation
+  case dismissal
+  public static func == (a: ModalPresentableSDK.TransitionStyle, b: ModalPresentableSDK.TransitionStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension UIKit.UIViewController : ModalPresentableSDK.ModalPresenterProtocol {
+  @_Concurrency.MainActor(unsafe) public var isModalPresented: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func presentModal(_ viewControllerToPresent: any UIKit.UIViewController & ModalPresentableSDK.ModalPresentable, sourceView: UIKit.UIView? = nil, sourceRect: CoreFoundation.CGRect = .zero, completion: (() -> Swift.Void)? = nil)
+}
+public enum DragIndicatorPosition : Swift.Equatable {
+  case inside, outside
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: ModalPresentableSDK.DragIndicatorPosition, b: ModalPresentableSDK.DragIndicatorPosition) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension ModalPresentableSDK.ModalPresentable where Self : UIKit.UIViewController {
+  public var topOffset: CoreFoundation.CGFloat {
+    get
+  }
+  public var transitionDuration: Swift.Double {
+    get
+  }
+  public var transitionAnimationOptions: UIKit.UIView.AnimationOptions {
+    get
+  }
+  public var shortFormHeight: ModalPresentableSDK.ModalHeight {
+    get
+  }
+  public var longFormHeight: ModalPresentableSDK.ModalHeight {
+    get
+  }
+  public var cornerRadius: CoreFoundation.CGFloat {
+    get
+  }
+  public var springDamping: CoreFoundation.CGFloat {
+    get
+  }
+  public var containerBackgroundColor: UIKit.UIColor? {
+    get
+  }
+  public var modalBackgroundColor: UIKit.UIColor {
+    get
+  }
+  public var dragIndicatorColor: UIKit.UIColor {
+    get
+  }
+  public var scrollIndicatorInsets: UIKit.UIEdgeInsets {
+    get
+  }
+  public var anchorModalToLongForm: Swift.Bool {
+    get
+  }
+  public var allowsExtendedScrolling: Swift.Bool {
+    get
+  }
+  public var allowsTapToDismiss: Swift.Bool {
+    get
+  }
+  public var allowsDragToDismiss: Swift.Bool {
+    get
+  }
+  public var isUserInteractionEnabled: Swift.Bool {
+    get
+  }
+  public var isHapticFeedbackEnabled: Swift.Bool {
+    get
+  }
+  public var shouldRoundTopCorners: Swift.Bool {
+    get
+  }
+  public var showDragIndicator: Swift.Bool {
+    get
+  }
+  public var dragIndicatorPosition: ModalPresentableSDK.DragIndicatorPosition {
+    get
+  }
+  public var dragSize: CoreFoundation.CGSize {
+    get
+  }
+  public var dragIndicatorYOffset: CoreFoundation.CGFloat {
+    get
+  }
+  public func shouldRespond(to modalGestureRecognizer: UIKit.UIPanGestureRecognizer) -> Swift.Bool
+  public func willRespond(to modalGestureRecognizer: UIKit.UIPanGestureRecognizer)
+  public func shouldTransition(to state: ModalPresentableSDK.PresentationState) -> Swift.Bool
+  public func shouldPrioritize(modalGestureRecognizer: UIKit.UIPanGestureRecognizer) -> Swift.Bool
+  public func willTransition(to state: ModalPresentableSDK.PresentationState)
+  public func modalWillDismiss()
+  public func modalDidDismiss()
+}
+public protocol ModalPresenterProtocol {
+  var isModalPresented: Swift.Bool { get }
+  func presentModal(_ viewControllerToPresent: any UIKit.UIViewController & ModalPresentableSDK.ModalPresentable, sourceView: UIKit.UIView?, sourceRect: CoreFoundation.CGRect, completion: (() -> Swift.Void)?)
+}
+public protocol ModalPresentable : AnyObject {
+  var scrollable: UIKit.UIScrollView? { get }
+  var topOffset: CoreFoundation.CGFloat { get }
+  var transitionDuration: Swift.Double { get }
+  var transitionAnimationOptions: UIKit.UIView.AnimationOptions { get }
+  var shortFormHeight: ModalPresentableSDK.ModalHeight { get }
+  var longFormHeight: ModalPresentableSDK.ModalHeight { get }
+  var cornerRadius: CoreFoundation.CGFloat { get }
+  var springDamping: CoreFoundation.CGFloat { get }
+  var containerBackgroundColor: UIKit.UIColor? { get }
+  var modalBackgroundColor: UIKit.UIColor { get }
+  var dragIndicatorColor: UIKit.UIColor { get }
+  var scrollIndicatorInsets: UIKit.UIEdgeInsets { get }
+  var allowsTapToDismiss: Swift.Bool { get }
+  var anchorModalToLongForm: Swift.Bool { get }
+  var allowsExtendedScrolling: Swift.Bool { get }
+  var allowsDragToDismiss: Swift.Bool { get }
+  var isUserInteractionEnabled: Swift.Bool { get }
+  var isHapticFeedbackEnabled: Swift.Bool { get }
+  var shouldRoundTopCorners: Swift.Bool { get }
+  var showDragIndicator: Swift.Bool { get }
+  var dragIndicatorPosition: ModalPresentableSDK.DragIndicatorPosition { get }
+  var dragSize: CoreFoundation.CGSize { get }
+  var dragIndicatorYOffset: CoreFoundation.CGFloat { get }
+  func shouldRespond(to modalGestureRecognizer: UIKit.UIPanGestureRecognizer) -> Swift.Bool
+  func willRespond(to modalGestureRecognizer: UIKit.UIPanGestureRecognizer)
+  func shouldPrioritize(modalGestureRecognizer: UIKit.UIPanGestureRecognizer) -> Swift.Bool
+  func shouldTransition(to state: ModalPresentableSDK.PresentationState) -> Swift.Bool
+  func willTransition(to state: ModalPresentableSDK.PresentationState)
+  func modalWillDismiss()
+  func modalDidDismiss()
+}
+extension ModalPresentableSDK.PresentationState : Swift.Equatable {}
+extension ModalPresentableSDK.PresentationState : Swift.Hashable {}
+extension ModalPresentableSDK.TransitionStyle : Swift.Equatable {}
+extension ModalPresentableSDK.TransitionStyle : Swift.Hashable {}
+extension ModalPresentableSDK.DragIndicatorPosition : Swift.Hashable {}

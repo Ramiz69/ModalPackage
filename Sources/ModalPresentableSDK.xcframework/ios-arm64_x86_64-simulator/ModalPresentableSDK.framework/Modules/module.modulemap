@@ -1,0 +1,11 @@
+framework module ModalPresentableSDK {
+  umbrella header "ModalPresentableSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module ModalPresentableSDK.Swift {
+  header "ModalPresentableSDK-Swift.h"
+  requires objc
+}
