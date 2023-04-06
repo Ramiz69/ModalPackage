@@ -16,6 +16,13 @@ public enum ModalHeight : Swift.Equatable {
   case intrinsicHeight
   public static func == (a: ModalPresentableSDK.ModalHeight, b: ModalPresentableSDK.ModalHeight) -> Swift.Bool
 }
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class DimmedView : UIKit.UIView {
+  @objc deinit
+}
+extension ModalPresentableSDK.ModalPresentationController : UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc final public func gestureRecognizer(_ gestureRecognizer: UIKit.UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIKit.UIGestureRecognizer) -> Swift.Bool
+}
 public typealias AnimationCompletionType = (Swift.Bool) -> Swift.Void
 public typealias LayoutType = UIKit.UIViewController & ModalPresentableSDK.ModalPresentable
 public enum PresentationState {
@@ -25,6 +32,43 @@ public enum PresentationState {
   public var hashValue: Swift.Int {
     get
   }
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) final public class ModalPresentationController : UIKit.UIPresentationController {
+  @_Concurrency.MainActor(unsafe) final public var isPresentedViewAnimating: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var extendsScrolling: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var anchorModalToLongForm: Swift.Bool
+  @_Concurrency.MainActor(unsafe) final public var scrollViewYOffset: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) final public var scrollObserver: Foundation.NSKeyValueObservation?
+  @_Concurrency.MainActor(unsafe) final public var shortFormYPosition: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) final public var longFormYPosition: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) final public var anchoredYPosition: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var presentable: (any ModalPresentableSDK.ModalPresentable)? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var backgroundView: ModalPresentableSDK.DimmedView {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) final public var dragIndicatorView: UIKit.UIView {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override final public var presentedView: UIKit.UIView {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) final public var gestureRecognizer: UIKit.UIPanGestureRecognizer {
+    get
+    set
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override final public func viewWillTransition(to size: CoreFoundation.CGSize, with coordinator: any UIKit.UIViewControllerTransitionCoordinator)
+  @_Concurrency.MainActor(unsafe) @objc override final public func containerViewWillLayoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override final public func presentationTransitionWillBegin()
+  @_Concurrency.MainActor(unsafe) @objc override final public func presentationTransitionDidEnd(_ completed: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override final public func dismissalTransitionWillBegin()
+  @_Concurrency.MainActor(unsafe) @objc override final public func dismissalTransitionDidEnd(_ completed: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
 }
 extension UIKit.UIScrollView {
   @_Concurrency.MainActor(unsafe) public var isScrolling: Swift.Bool {
@@ -128,6 +172,20 @@ extension ModalPresentableSDK.ModalPresentable where Self : UIKit.UIViewControll
   public func willTransition(to state: ModalPresentableSDK.PresentationState)
   public func modalWillDismiss()
   public func modalDidDismiss()
+  public func modalTransition(to state: ModalPresentableSDK.PresentationState)
+  public func modalSetNeedsLayoutUpdate()
+  public func modalPerformUpdates(_ updates: () -> Swift.Void)
+  public func modalAnimate(_ animationBlock: @escaping () -> Swift.Void, _ completion: ModalPresentableSDK.AnimationCompletionType? = nil)
+  public var presentedVC: ModalPresentableSDK.ModalPresentationController? {
+    get
+  }
+  public var shortFormYPos: CoreFoundation.CGFloat {
+    get
+  }
+  public var longFormYPos: CoreFoundation.CGFloat {
+    get
+  }
+  public func topMargin(from: ModalPresentableSDK.ModalHeight) -> CoreFoundation.CGFloat
 }
 public protocol ModalPresenterProtocol {
   var isModalPresented: Swift.Bool { get }

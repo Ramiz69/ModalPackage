@@ -260,6 +260,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
+@import UIKit;
 #endif
 
 #endif
@@ -280,6 +282,41 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+@class NSCoder;
+
+SWIFT_CLASS("_TtC19ModalPresentableSDK10DimmedView")
+@interface DimmedView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@protocol UIViewControllerTransitionCoordinator;
+@class UIViewController;
+
+SWIFT_CLASS("_TtC19ModalPresentableSDK27ModalPresentationController")
+@interface ModalPresentationController : UIPresentationController
+@property (nonatomic, readonly, strong) UIView * _Nonnull presentedView;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+- (void)containerViewWillLayoutSubviews;
+- (void)presentationTransitionWillBegin;
+- (void)presentationTransitionDidEnd:(BOOL)completed;
+- (void)dismissalTransitionWillBegin;
+- (void)dismissalTransitionDidEnd:(BOOL)completed;
+- (nonnull instancetype)initWithPresentedViewController:(UIViewController * _Nonnull)presentedViewController presentingViewController:(UIViewController * _Nullable)presentingViewController OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class UIGestureRecognizer;
+
+@interface ModalPresentationController (SWIFT_EXTENSION(ModalPresentableSDK)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+
+
 
 
 
@@ -553,6 +590,8 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
+@import UIKit;
 #endif
 
 #endif
@@ -573,6 +612,41 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 #if defined(__OBJC__)
+@class NSCoder;
+
+SWIFT_CLASS("_TtC19ModalPresentableSDK10DimmedView")
+@interface DimmedView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder SWIFT_UNAVAILABLE;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+@protocol UIViewControllerTransitionCoordinator;
+@class UIViewController;
+
+SWIFT_CLASS("_TtC19ModalPresentableSDK27ModalPresentationController")
+@interface ModalPresentationController : UIPresentationController
+@property (nonatomic, readonly, strong) UIView * _Nonnull presentedView;
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
+- (void)containerViewWillLayoutSubviews;
+- (void)presentationTransitionWillBegin;
+- (void)presentationTransitionDidEnd:(BOOL)completed;
+- (void)dismissalTransitionWillBegin;
+- (void)dismissalTransitionDidEnd:(BOOL)completed;
+- (nonnull instancetype)initWithPresentedViewController:(UIViewController * _Nonnull)presentedViewController presentingViewController:(UIViewController * _Nullable)presentingViewController OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+@class UIGestureRecognizer;
+
+@interface ModalPresentationController (SWIFT_EXTENSION(ModalPresentableSDK)) <UIGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)gestureRecognizer:(UIGestureRecognizer * _Nonnull)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer * _Nonnull)otherGestureRecognizer SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+
+
 
 
 
